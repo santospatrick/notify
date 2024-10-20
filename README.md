@@ -53,7 +53,7 @@ import { NotificationManager, EmailProviders } from '@santospatrick/notify'
 import { EmailProvider } from '@/contracts/EmailProviders';
 
 // Create a new instance of NotificationManager
-const notificationManager = new NotificationManager(EmailProviders.SENDGRID);
+const notificationManager = new NotificationManager();
 
 // Setup email service to be Twilio SendGrid (more to come!)
 notificationManager.addEmailService(EmailProviders.SENDGRID)
