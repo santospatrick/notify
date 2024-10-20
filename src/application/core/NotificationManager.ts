@@ -4,6 +4,9 @@ import {
   NotificationService,
 } from '@/contracts/NotificationService'
 import { SendgridService } from '@/application/services/SendgridService'
+import { EmptyServices } from '../errors/EmptyServices'
+import { DuplicatedService } from '../errors/DuplicatedService'
+import { UnknownProvider } from '../errors/UnknownProvider'
 
 interface EmailServiceProps {
   provider: EmailProviders
@@ -19,22 +22,24 @@ class NotificationManager {
         if (
           this.services.some((service) => service instanceof SendgridService)
         ) {
-          throw new Error('SendgridService is already added')
+          throw new DuplicatedService('SendgridService')
         }
         this.services.push(new SendgridService({ apiKey }))
         break
       default:
-        throw new Error('Unknown email provider')
+        throw new UnknownProvider('email', provider)
     }
   }
 
   async send(params: NotificationSendParams) {
+    if (!this.services.length) {
+      throw new EmptyServices()
+    }
+
     await Promise.all(
       this.services.map(async (service) => {
         await service.send(params).catch((error) => {
-          throw new Error(
-            `${service.constructor.name} failed: ${error.message}`,
-          )
+          throw new Error(error.message)
         })
       }),
     )

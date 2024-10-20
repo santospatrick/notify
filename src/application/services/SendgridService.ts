@@ -1,8 +1,11 @@
+import { EmailProviders } from '@/contracts/EmailProviders'
 import {
   NotificationSendParams,
   NotificationService,
 } from '@/contracts/NotificationService'
 import sendgridMail from '@sendgrid/mail'
+import { MissingApiKeyError } from '@/application/errors/MissingApiKeyError'
+import { SendgridError } from '@/application/errors/SendgridError'
 
 interface SendgridServiceProps {
   apiKey: string
@@ -13,7 +16,7 @@ export class SendgridService implements NotificationService {
 
   constructor({ apiKey }: SendgridServiceProps) {
     if (!apiKey) {
-      throw new Error('SendgridService failed: Missing apiKey')
+      throw new MissingApiKeyError(EmailProviders.SENDGRID)
     }
     sendgridMail.setApiKey(apiKey)
     this.client = sendgridMail
@@ -30,11 +33,10 @@ export class SendgridService implements NotificationService {
         html,
       })
     } catch (error) {
-      if (error instanceof Error) {
-        throw new Error(`SendgridService failed: ${error.message}`)
-      } else {
-        throw new Error('SendgridService failed: Unknown error')
-      }
+      throw new SendgridError(
+        params,
+        error instanceof Error ? error : undefined,
+      )
     }
   }
 }
