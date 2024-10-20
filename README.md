@@ -1,6 +1,18 @@
 # `@santospatrick/notify`
 > This library provides an easy-to-use notification system that supports sending notifications via email and SMS using third-party providers.
 
+<img src="docs/logo.png" width="250px" />
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Example: Sending an email](#example-sending-an-email)
+- [Third-Party Providers](#third-party-providers)
+    - [Email Providers](#email-providers)
+        - [How to get Twilio Sendgrid Grid API Key](#how-to-get-twilio-sendgrid-grid-api-key)
+
 ## Features
 
 - Send Email notifications
@@ -24,7 +36,7 @@ npm install @santospatrick/notify
 yarn add @santospatrick/notify
 ```
 
-## Using `pnpm`
+### Using `pnpm`
 
 ```bash
 pnpm add @santospatrick/notify
@@ -53,7 +65,11 @@ notificationManager.send({
 }).catch(console.error)
 ```
 
-## Setting Up the Twilio SendGrid API Key
+## Third-Party Providers
+
+### Email Providers
+
+#### How to get Twilio Sendgrid Grid API Key
 
 This library uses SendGrid to send email notifications. To set up the SendGrid API key:
 
@@ -62,6 +78,7 @@ This library uses SendGrid to send email notifications. To set up the SendGrid A
 3. Fill out the form and click **"Create"**.
 4. Go to `Settings > API Keys > "Create API Key"`.
 5. Give it a name and select **"Restricted Access"**, click **"Mail Send"** and enable **"Mail Send"** (this is the only permission needed).
+![Notification System Diagram](docs/sendgrid-mail-send.png)
 6. Click **"Create & View"** and copy the API key.
 
 Made with ❤️ by Patrick Santos
