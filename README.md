@@ -69,13 +69,25 @@ import { EmailProvider } from '@/contracts/EmailProviders';
 const notificationManager = new NotificationManager();
 
 // Setup email service to be Twilio SendGrid (more to come!)
-notificationManager.addEmailService(EmailProviders.SENDGRID)
+notificationManager.addEmailService({
+  service: EmailProviders.SENDGRID,
+  apiKey: 'YOUR_API_KEY_HERE', // Your Twilio SendGrid API key that starts with "SG."
+})
 
 // Send notification
-notificationManager.send({
-    title: 'Hello World',
-    message: 'This is a test message',
-}).catch(console.error)
+notificationManager
+  .send({
+    from: 'info@santospatrick.com', // Needs to be a "Single Sender" verified in SendGrid.
+    to: 'info@santospatrick.com',
+    subject: 'Hello from my application!',
+    html: '<strong>Hi there! Using @santospatrick/notify lib.</strong>',
+  })
+  .then(() => {
+    console.log('Email sent!')
+  })
+  .catch((error) => {
+    console.error(error)
+  })
 ```
 
 ## Third-Party Providers

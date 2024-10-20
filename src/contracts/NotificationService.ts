@@ -1,3 +1,10 @@
+export interface NotificationSendParams {
+  from: string
+  to: string
+  subject: string
+  html: string
+}
+
 export interface NotificationService {
-  send(params: { title: string; message: string }): Promise<void>
+  send(params: NotificationSendParams): Promise<void>
 }
