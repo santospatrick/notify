@@ -1,4 +1,5 @@
 # `@santospatrick/notify`
+>
 > This library provides an easy-to-use notification system that supports sending notifications via email and SMS using third-party providers.
 
 <img src="docs/logo.png" width="250px" />
@@ -7,11 +8,16 @@
 
 - [Features](#features)
 - [Installation](#installation)
+  - [Using `npm`](#using-npm)
+  - [Using `yarn`](#using-yarn)
+  - [Using `pnpm`](#using-pnpm)
 - [Usage](#usage)
   - [Example: Sending an email](#example-sending-an-email)
 - [Third-Party Providers](#third-party-providers)
-    - [Email Providers](#email-providers)
-        - [How to get Twilio Sendgrid Grid API Key](#how-to-get-twilio-sendgrid-grid-api-key)
+  - [Email Providers](#email-providers)
+    - [How to get Twilio Sendgrid Grid API Key](#how-to-get-twilio-sendgrid-grid-api-key)
+- [Local Development](#local-development)
+  - [Step-by-Step Guide](#step-by-step-guide)
 
 ## Features
 
@@ -80,5 +86,31 @@ This library uses SendGrid to send email notifications. To set up the SendGrid A
 5. Give it a name and select **"Restricted Access"**, click **"Mail Send"** and enable **"Mail Send"** (this is the only permission needed).
 ![Notification System Diagram](docs/sendgrid-mail-send.png)
 6. Click **"Create & View"** and copy the API key.
+
+## Local Development
+
+To test the library locally while developing, you can use `npm link`. This allows you to symlink your local development version of the library into another project.
+
+### Step-by-Step Guide
+
+1. In the root directory of your library, run:
+
+```bash
+npm link
+```
+
+This will create a global symlink to your library.
+
+2. In the project where you want to test the library, run:
+
+```bash
+npm link @santospatrick/notify
+```
+
+This will create a symlink from the global `@santospatrick/notify` to the `node_modules` of your project.
+
+3. Make changes to this library and run `yarn build` to compile the TypeScript code.
+
+4. Run your project and test the changes.
 
 Made with ❤️ by Patrick Santos
