@@ -20,6 +20,8 @@
   - [Using `pnpm`](#using-pnpm)
 - [Usage](#usage)
   - [Example: Sending an email](#example-sending-an-email)
+    - [Configuration: Setting up NotificationManager](#configuration-setting-up-notificationmanager)
+    - [Usage: Sending an email](#usage-sending-an-email)
 - [Third-Party Providers](#third-party-providers)
   - [Email Providers](#email-providers)
     - [How to get Twilio Sendgrid Grid API Key](#how-to-get-twilio-sendgrid-grid-api-key)
@@ -61,9 +63,13 @@ pnpm add @santospatrick/notify
 
 Here’s a basic example of how to send an email using the `NotificationManager` from the library:
 
+#### Configuration: Setting up NotificationManager
+
+First, create a file named `notificationConfig.ts` to configure the `NotificationManager`:
+
 ```typescript
-import { NotificationManager, EmailProviders } from '@santospatrick/notify'
-import { EmailProvider } from '@/contracts/EmailProviders';
+// notificationConfig.ts
+import { NotificationManager, EmailProviders } from '@santospatrick/notify';
 
 // Create a new instance of NotificationManager
 const notificationManager = new NotificationManager();
@@ -72,7 +78,18 @@ const notificationManager = new NotificationManager();
 notificationManager.addEmailService({
   provider: EmailProviders.SENDGRID,
   apiKey: 'YOUR_API_KEY_HERE', // Your Twilio SendGrid API key that starts with "SG."
-})
+});
+
+export { notificationManager };
+```
+
+#### Usage: Sending an email
+
+Now, create another file named `sendEmail.ts` to use the `notificationManager` object for sending an email:
+
+```typescript
+// sendEmail.ts
+import { notificationManager } from './notificationConfig';
 
 // Send notification
 notificationManager
@@ -83,11 +100,11 @@ notificationManager
     html: '<strong>Hi there! Using @santospatrick/notify lib.</strong>',
   })
   .then(() => {
-    console.log('Email sent!')
+    console.log('Email sent!');
   })
   .catch((error) => {
-    console.error(error)
-  })
+    console.error(error);
+  });
 ```
 
 ## Third-Party Providers
