@@ -68,9 +68,9 @@ import { EmailProvider } from '@/contracts/EmailProviders';
 // Create a new instance of NotificationManager
 const notificationManager = new NotificationManager();
 
-// Setup email service to be Twilio SendGrid (more to come!)
+// Setup email service to use Twilio SendGrid (more to come!)
 notificationManager.addEmailService({
-  service: EmailProviders.SENDGRID,
+  provider: EmailProviders.SENDGRID,
   apiKey: 'YOUR_API_KEY_HERE', // Your Twilio SendGrid API key that starts with "SG."
 })
 
