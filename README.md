@@ -6,10 +6,10 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
 ![Babel](https://img.shields.io/badge/Babel-F9DC3E?style=flat-square&logo=babel&logoColor=black)
-[![npm version](https://img.shields.io/badge/npm-v0.0.1-orange.svg?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
+[![npm version](https://img.shields.io/npm/v/@santospatrick/notify?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
 [![Alpha](https://img.shields.io/badge/status-alpha-red.svg?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
 
-<img src="./docs/logo.png" width="250px" />
+<img src="https://raw.githubusercontent.com/santospatrick/notify/main/docs/logo.png" width="250px" />
 
 ## Table of Contents
 
