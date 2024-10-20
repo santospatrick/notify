@@ -11,6 +11,8 @@
 
 <img src="https://raw.githubusercontent.com/santospatrick/notify/main/docs/logo.png" width="250px" />
 
+> **Disclaimer:** This library is currently in alpha version and should not be used in production environments. Use it at your own risk.
+
 ## Table of Contents
 
 - [Features](#features)
@@ -31,10 +33,10 @@
 
 ## Features
 
-- Send Email notifications
-- Send SMS notifications
-- Centralized notification management
-- Flexible architecture for extending to other notification channels
+- [x] Send Email notifications
+- [ ] Send SMS notifications
+- [x] Centralized notification management
+- [x] Flexible architecture for extending to other notification channels
 
 ## Installation
 
