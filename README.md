@@ -27,6 +27,7 @@
     - [How to get Twilio Sendgrid Grid API Key](#how-to-get-twilio-sendgrid-grid-api-key)
 - [Local Development](#local-development)
   - [Step-by-Step Guide](#step-by-step-guide)
+- [Publishing to `npm`, `yarn` and `pnpm`](#publishing-to-npm-yarn-and-pnpm)
 
 ## Features
 
@@ -149,7 +150,7 @@ This will create a symlink from the global `@santospatrick/notify` to the `node_
 
 4. Run your project and test the changes.
 
-### Publishing to `npm`, `yarn` and `pnpm`
+## Publishing to `npm`, `yarn` and `pnpm`
 
 To publish the library to npm, follow these steps:
 
