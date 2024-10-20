@@ -9,7 +9,7 @@
 [![npm version](https://img.shields.io/badge/npm-v0.0.1-orange.svg?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
 [![Alpha](https://img.shields.io/badge/status-alpha-red.svg?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
 
-<img src="https://raw.githubusercontent.com/santospatrick/notify/refs/heads/main/docs/logo.png?token=GHSAT0AAAAAAB72RVM2NBXUIJC26MHJDCGKZYUSPMA" width="250px" />
+<img src="docs/logo.png" width="250px" />
 
 ## Table of Contents
 
@@ -120,7 +120,7 @@ This library uses SendGrid to send email notifications. To set up the SendGrid A
 3. Fill out the form and click **"Create"**.
 4. Go to `Settings > API Keys > "Create API Key"`.
 5. Give it a name and select **"Restricted Access"**, click **"Mail Send"** and enable **"Mail Send"** (this is the only permission needed).
-![Notification System Diagram](https://raw.githubusercontent.com/santospatrick/notify/refs/heads/main/docs/sendgrid-mail-send.png?token=GHSAT0AAAAAAB72RVM2TIZU4BB23WLA7VTKZYUSP3A)
+![Notification System Diagram](docs/sendgrid-mail-send.png)
 6. Click **"Create & View"** and copy the API key.
 
 ## Local Development
