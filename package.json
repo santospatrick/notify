@@ -1,8 +1,9 @@
 {
   "name": "@santospatrick/notify",
   "description": "Effortless Email and SMS Notification System using Third-Party Providers with Node.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.js",
+  "files": ["dist", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/santospatrick/notify.git"
