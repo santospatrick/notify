@@ -1,8 +1,12 @@
 {
   "name": "@santospatrick/notify",
+  "description": "Effortless Email and SMS Notification System using Third-Party Providers with Node.js",
   "version": "0.0.1",
   "main": "./dist/index.js",
-  "repository": "git@github.com:santospatrick/notify.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/santospatrick/notify.git"
+  },
   "author": "Patrick Santos <info@santospatrick.com>",
   "license": "MIT",
   "scripts": {
