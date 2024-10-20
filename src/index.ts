@@ -1,6 +1,4 @@
-function notify() {
-  console.log('@santospatrick/notify says hi!!!')
-  console.log('You have a new notification!')
-}
+import { NotificationManager } from '@/application/core/NotificationManager'
+import { EmailProviders } from '@/contracts/EmailProviders'
 
-export { notify }
+export { NotificationManager, EmailProviders }

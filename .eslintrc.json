@@ -1,0 +1,12 @@
+{
+    "extends": "@rocketseat/eslint-config/node",
+    "rules": {
+        "camelcase": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    }
+}

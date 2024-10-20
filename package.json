@@ -2,18 +2,25 @@
   "name": "@santospatrick/notify",
   "version": "0.0.1",
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "repository": "git@github.com:santospatrick/notify.git",
   "author": "Patrick Santos <info@santospatrick.com>",
   "license": "MIT",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
+    "build": "tsc && babel src --out-dir dist --extensions \".ts,.js\"",
     "start": "node dist/index.js",
-    "prod": "tsx src/index.ts"
+    "prod": "tsx src/index.ts",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --ext .ts src --fix"
   },
   "devDependencies": {
-    "tsx": "^4.19.1",
-    "typescript": "^5.6.3"
+    "@babel/cli": "7.25.7",
+    "@babel/core": "7.25.8",
+    "@babel/preset-env": "7.25.8",
+    "@babel/preset-typescript": "7.25.7",
+    "@rocketseat/eslint-config": "2.2.2",
+    "babel-plugin-module-resolver": "5.0.2",
+    "tsx": "4.19.1",
+    "typescript": "5.6.3"
   }
 }
