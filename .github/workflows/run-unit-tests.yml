@@ -1,7 +1,11 @@
 name: Run tests and upload coverage
 
 on: 
-  push
+  push:
+    paths-ignore:
+      - 'docs/**'    # Ignore all files in the docs directory
+      - '*.md'       # Ignore all Markdown files in the root directory
+      - '**/*.md'    # Ignore all Markdown files in subdirectories
 
 jobs:
   test:

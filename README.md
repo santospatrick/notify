@@ -8,6 +8,7 @@
 ![Babel](https://img.shields.io/badge/Babel-F9DC3E?style=flat-square&logo=babel&logoColor=black)
 [![npm version](https://img.shields.io/npm/v/@santospatrick/notify?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
 [![Alpha](https://img.shields.io/badge/status-alpha-red.svg?style=flat-square)](https://www.npmjs.com/package/@santospatrick/notify)
+[![Codecov](https://img.shields.io/codecov/c/gh/santospatrick/notify?style=flat-square)](https://codecov.io/github/santospatrick/notify)
 
 <img src="https://raw.githubusercontent.com/santospatrick/notify/main/docs/logo.png" width="250px" />
 
